@@ -142,7 +142,14 @@ lspconfig.vimls.setup({
     capabilities = capabilities,
   })
 
-
+lspconfig.clangd.setup({
+    on_attach = custom_attach,
+    capabilities = capabilities,
+    filetypes = { "c", "cpp", "cc" },
+    flags = {
+      debounce_text_changes = 500,
+    },
+  })
 
 
 -- Change diagnostic signs.
