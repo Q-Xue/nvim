@@ -36,6 +36,11 @@ let g:matchup_matchparen_offscreen = {'method': 'popup'}
 "-------------------------- vimtex --------------------------
 let g:vimtex_view_general_viewer = 'SumatraPDF.exe'
 
+if g:is_win
+    let g:vimtex_view_general_options = '-reuse-instance -forward-search @tex @line @pdf'
+endif
+
+
 let g:vimtex_compiler_latexmk = {
     \ 'build_dir' : '',
     \ 'callback' : 1,
