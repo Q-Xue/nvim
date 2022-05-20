@@ -56,8 +56,20 @@ let g:vimtex_quickfix_ignore_filters = [
   \'FandolSong-Regular'
   \]
 
+" if ( g:is_win || g:is_mac ) && executable('latex')
+  " Hacks for inverse serach to work semi-automatically,
+  " see https://jdhao.github.io/2021/02/20/inverse_search_setup_neovim_vimtex/.
+  function! s:write_server_name() abort
+    let nvim_server_file = (has('win32') ? $TEMP : '/tmp') . '/vimtexserver.txt'
+    call writefile([v:servername], nvim_server_file)
+  endfunction
 
-
+  augroup vimtex_common
+    autocmd!
+    autocmd FileType tex call s:write_server_name()
+    autocmd FileType tex nmap <buffer> <F9> <plug>(vimtex-compile)
+  augroup END
+" endif
 
 
 
