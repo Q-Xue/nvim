@@ -14,3 +14,13 @@ nnoremap ; :
 vnoremap ; :
 
 nnoremap <silent> <F2> :call utils#ToggleQuickFix()<cr>
+
+nnoremap <Left> <C-W>h
+nnoremap <Right> <C-W>l
+nnoremap <Up> <C-W>k
+nnoremap <Down> <C-W>j
+
+nnoremap <M-h> <C-W>h
+nnoremap <M-l> <C-W>l
+nnoremap <M-k> <C-W>k
+nnoremap <M-j> <C-W>j
