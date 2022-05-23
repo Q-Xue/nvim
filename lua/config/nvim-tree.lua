@@ -59,12 +59,12 @@ vim.g.nvim_tree_icons = {
 
 
 local function map(mode, lhs, rhs, opts)
-local options = {noremap = true, silent = true}
+    local options = {noremap = true, silent = true}
     if opts then options = vim.tbl_extend('force', options, opts) end
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-map('n', '<leader>e', '<cmd>NvimTreeToggle<CR>')    
+map('n', '<leader>e', '<cmd>NvimTreeToggle<CR>')
 
 -- -------------------- map example --------------------
 -- -- It adds motions like 25j and 30k to the jump list, so you can cycle
