@@ -127,15 +127,8 @@ require("packer").startup({
     -- -------------------- vimtex --------------------------
     use({ "lervag/vimtex", ft = { "tex" } })
 
-
-
-
-
-
-
-
-
-
+    -- -------------------- surround --------------------------
+    use({"machakann/vim-sandwich", event = "VimEnter"})
 
 
 
