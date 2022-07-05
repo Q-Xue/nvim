@@ -152,6 +152,19 @@ lspconfig.clangd.setup({
   })
 
 
+lspconfig['rust_analyzer'].setup({
+    on_attach = custom_attach,
+    capabilities = capabilities,
+    flags = {
+      debounce_text_changes = 500,
+    },
+  })
+
+
+
+
+
+
 -- Change diagnostic signs.
 vim.fn.sign_define("DiagnosticSignError", { text = "✗", texthl = "DiagnosticSignError" })
 vim.fn.sign_define("DiagnosticSignWarn", { text = "!", texthl = "DiagnosticSignWarn" })
@@ -170,19 +183,6 @@ vim.diagnostic.config({
 lsp.handlers["textDocument/hover"] = lsp.with(vim.lsp.handlers.hover, {
   border = "rounded",
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
