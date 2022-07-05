@@ -101,6 +101,7 @@ telescope.setup {
 telescope.load_extension('fzf')
 
 
+-- --------------- keybindings ---------------
 local opts = { silent = true,}
 -- vim.keymap.set("n", "tff", ":Telescope find_files<CR>", opts)
 vim.keymap.set("n", "tff", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
